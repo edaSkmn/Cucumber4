@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LeftNav extends Parent{
+public class LeftNav extends Parent {
 
     public LeftNav() {
-        PageFactory.initElements(GWD.getDriver(),this);}
+        PageFactory.initElements(GWD.getDriver(), this);
+    }
 
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement setUpOne;
@@ -19,19 +20,22 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "//span[text()='Countries']")
     private WebElement countries;
 
+
+    @FindBy(xpath="(//span[text()='Citizenships'])[1]")
+    private WebElement citizenShip;
+
     WebElement myElement;
+
     public void findAndClick(String strElement) {
 
         switch (strElement) {
 
-            case "setUpOne": myElement = setUpOne; break;
-            case "parameters": myElement = parameters; break;
-            case "countries": myElement = countries; break;
+            case "setUpOne": myElement = setUpOne;break;
+            case "parameters": myElement = parameters;break;
+            case "countries": myElement = countries;break;
+            case "citizenShip" : myElement=citizenShip;break;
         }
 
         clickFunction(myElement);
-
     }
-
-
 }

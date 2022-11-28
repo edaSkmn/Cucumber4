@@ -40,9 +40,10 @@ public class Parent {
 
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-    public void verifyContainsTextFunction(WebElement element, String value) {
-
-        waitUntilVisible(element); //gorunene kadar bekle(wait)
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+    public void verifyContainsTextFunction(WebElement element, String value)
+    {
+        //waitUntilVisible(element); // gözükene kadar bekle
+        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
+        Assert.assertTrue("The text you searched could'nt be find",element.getText().toLowerCase().contains(value.toLowerCase()));
     }
 }
