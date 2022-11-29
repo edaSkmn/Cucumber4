@@ -20,9 +20,9 @@ Feature: Citizenship with scenario Outline
     When User a CitizenShip name as "<Name>" short name as "<ShortName>"
     Then Already exist message should be displayed
 
-#    When User delete.... TODO
-#    Then Success message should be displayed
-#
+    When User delete the "<Name>"
+    Then Success message should be displayed
+
     Examples:
       | Name     | ShortName |
       | vatIs113 | isVat114  |
