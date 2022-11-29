@@ -4,7 +4,9 @@ import Utilities.GWD;
 import io.cucumber.java.et.Ja;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,5 +47,6 @@ public class Parent {
         //waitUntilVisible(element); // gözükene kadar bekle
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue("The text you searched could'nt be find",element.getText().toLowerCase().contains(value.toLowerCase()));
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform(); //dialog kutusu kapatildi
     }
 }
