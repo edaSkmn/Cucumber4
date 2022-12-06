@@ -39,7 +39,6 @@ public class LeftNav extends Parent {
     private WebElement entranceExamsTwo;
 
 
-
     WebElement myElement;
 
     public void findAndClick(String strElement) {

@@ -14,7 +14,7 @@ Feature: Datatable Functionality
     And Click on the element in the Dialog
       | addButton |
 
-    And Click on the element in the Dialog content
+    And User sending the keys in Dialog content
       | nameInput | 867sdfk |
       | codeInput | 86dfk   |
 
@@ -37,7 +37,7 @@ Feature: Datatable Functionality
     And Click on the element in the Dialog
       | addButton |
 
-    And Click on the element in the Dialog content
+    And User sending the keys in Dialog content
       | nameInput | 867sdfk |
 
     And Click on the element in the Dialog
@@ -59,7 +59,7 @@ Feature: Datatable Functionality
       And Click on the element in the Dialog
         | addButton |
 
-      And Click on the element in the Dialog content
+      And User sending the keys in Dialog content
         | nameInput | fee12fk |
         | codeInput | 12356 |
         | integrationCode | 2345 |

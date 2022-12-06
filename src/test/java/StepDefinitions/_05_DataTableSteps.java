@@ -36,8 +36,8 @@ public class _05_DataTableSteps {
         }
     }
 
-    @And("Click on the element in the Dialog content")
-    public void clickOnTheElementInTheDialogContent(DataTable elemanlar) {
+    @And("User sending the keys in Dialog content")
+    public void userSendingTheKeysInDialogContent(DataTable elemanlar) {
         List<List<String>> listElemanlar = elemanlar.asLists(String.class);
 
         for (int i = 0; i < listElemanlar.size(); i++)

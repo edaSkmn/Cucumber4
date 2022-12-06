@@ -18,7 +18,7 @@ Feature: Exam Functionality
     And Click on the element in the Dialog
       | addButton |
 
-    And Click on the element in the Dialog content
+    And User sending the keys in Dialog content
       | nameInput | yen234 |
 
     And Click on the element in the Form Content

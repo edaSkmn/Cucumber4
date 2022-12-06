@@ -130,7 +130,7 @@ public class DialogContent extends Parent {
         //wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//tbody[@role='rowgroup']//tr"),5));
         //findAndContainsText("searchResultCell",searchText); // arama sonuclarinin ilkinde aranan kelime gorunene kadar bekle
 
-        waitUntilLoading();
+        waitUntilLoading(); //progress barin cocuklari 0 olana kadar bekle
         findAndClick("deleteButton");  // silme butonuna bas, cop kutusu
         findAndClick("deleteDialogBtn"); // dialogtaki silme butonuna bas
 
