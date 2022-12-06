@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +16,10 @@ public class GWD {
     private static WebDriver driver;
 
     public static WebDriver getDriver(){
+
+        // extend report türkçe bilg çalışmaması sebebiyle kondu- bende spark raporu calisti ama turkce olursa bunu kullan
+//        Locale.setDefault(new Locale("EN"));
+//        System.setProperty("user.language", "EN");
 
         if(driver == null) { //1 kere baslat
             //driver i baslat, doldur, baslat ve gonder
