@@ -87,7 +87,7 @@ public class ExcelUtility {
 
             try {
 
-                FileInputStream inputStream = new FileInputStream(path);
+               inputStream = new FileInputStream(path);
                 workbook = WorkbookFactory.create(inputStream);
                 sheet = workbook.getSheetAt(0);
 
