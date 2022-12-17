@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -24,6 +25,13 @@ public class Hooks {
     public void after(Scenario senaryo){
 
         System.out.println("Senaryo bitti");
+
+        LocalDateTime time=LocalDateTime.now();
+        DateTimeFormatter tf= DateTimeFormatter.ofPattern("dd_MM_YYHHmmss");
+
+        // Senaryolarin sonuclarini bir excel formatinda yazdirmak istiyorum
+        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/ScenarioStatus.xlsx",senaryo, GWD.getThreadBrowserName(), time.format(tf));
+
 
         if (senaryo.isFailed()){ // senaryo bittigi zaman
             System.out.println("Login olmadi, Hata mesaji gorundu");
