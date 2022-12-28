@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
+import Pages.FormContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -10,6 +11,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 public class _02_CountrySteps {
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
+    FormContent fc=new FormContent();
     @And("Navigate to country page")
     public void navigateToCountryPage() {
         ln.findAndClick("setUpOne");
@@ -44,5 +46,10 @@ public class _02_CountrySteps {
         dc.findAndSend("codeInput",code);
         dc.findAndClick("saveButton");
 
+    }
+
+    @And("User sending the action keys in Form Content")
+    public void userSendingTheActionKeysInFormContent() {
+        fc.findAndSendAction("country","Turkey");
     }
 }

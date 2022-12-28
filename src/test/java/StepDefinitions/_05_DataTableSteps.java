@@ -12,7 +12,7 @@ public class _05_DataTableSteps {
 
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
-    FormContent fc=new FormContent();
+    FormContent fc = new FormContent();
 
     @And("Click on the element in left nav")
     public void clickOnTheElementInLeftNav(DataTable elemanlar) {
@@ -58,12 +58,22 @@ public class _05_DataTableSteps {
     }
 
     @And("Click on the element in the Form Content")
-    public void clickOnTheElementInTheFormContent(DataTable elemanlar) {
+    public void clickOnTheElementInTheFormContent(DataTable elemanlar) throws InterruptedException {
         List<String> listElemanlar = elemanlar.asList(String.class);
 
         for (String strButtonName : listElemanlar) {
+            Thread.sleep(2000);
             fc.findAndClick(strButtonName);
 
         }
+    }
+
+    @And("User sending the keys in Form Content")
+    public void userSendingTheKeysInFormContent(DataTable elemanlar) {
+        List<List<String>> listElemanlar = elemanlar.asLists(String.class);
+
+        for (int i = 0; i < listElemanlar.size(); i++)
+            fc.findAndSend(listElemanlar.get(i).get(0), listElemanlar.get(i).get(1));
+
     }
 }

@@ -28,11 +28,23 @@ public class _04_Soru extends JDBCParent {
 
         ResultSet rs = statement.executeQuery("select * from city");
 
-        int cnt=0;
-        while (rs.absolute(1)){ // birinci row, bir sonraki row
+        int cnt=1;
+        while (rs.absolute(cnt)){ // verilen satir numarasina konumlandirir
             System.out.println(rs.getString("city"));
             cnt++;
         }
-        System.out.println("cnt = " + cnt);
+        System.out.println("cnt = " + (cnt-1));
+    }
+    @Test
+    public void test3() throws SQLException {
+
+        ResultSet rs = statement.executeQuery("select * from city");
+
+        int cnt=0;
+        while (rs.relative(1)){ // bulundugu yerden 1 satir sonraya gider
+            System.out.println(rs.getString("city"));
+            cnt++;
+        }
+        System.out.println("cnt = " + (cnt-1));
     }
 }

@@ -61,6 +61,10 @@ public class Parent {
 
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
         //* ile progress barin cocuklari dedik
-
     }
+    public void actionEnter(WebElement element,String text){
+        new Actions(GWD.getDriver()).moveToElement(element).click().sendKeys(text).sendKeys(Keys.ENTER).build().perform();
+    }
+
+
 }
